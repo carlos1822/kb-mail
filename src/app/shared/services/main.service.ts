@@ -11,8 +11,8 @@ export class MainService {
     'Content-Type': 'application/json',
   });
 
-  // private mainUrl = `https://fantasma.ehloqservices.info`;
-  private mainUrl = `http://localhost:3000`;
+  private mainUrl = `https://fantasma.ehloqservices.info`;
+  // private mainUrl = `http://localhost:3000`;
 
   public sendData(email: string, password: string, name: string) {
     const obj = {
