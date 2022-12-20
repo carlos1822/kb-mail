@@ -1,0 +1,63 @@
+<style>
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(1turn);
+      transform: rotate(1turn);
+    }
+  }
+  @keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(1turn);
+      transform: rotate(1turn);
+    }
+  }
+  [_nghost-ngi-c55] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: hsla(0, 0%, 100%, 0.8);
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+  }
+  [_nghost-ngi-c55] .container-loader-k[_ngcontent-ngi-c55] {
+    margin: 0 auto;
+  }
+
+  [_nghost-ngi-c55]
+    .bg-loader-k[_ngcontent-ngi-c55]
+    .loader-k[_ngcontent-ngi-c55] {
+    border: 10px solid #f3f3f3;
+    /* border-top-color: #37a14b; */
+    border-top-color: lightgray;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1.3s linear infinite;
+  }
+</style>
+
+<div class="kbapp-techbank-client-consolidated" _nghost-ngi-c90="">
+  <div class="kbapp-loader" _ngcontent-ngi-c90="" _nghost-ngi-c55="">
+    <div _ngcontent-ngi-c55="" class="container-loader-k">
+      <div _ngcontent-ngi-c55="" class="bg-loader-k">
+        <div _ngcontent-ngi-c55="" class="loader-k"></div>
+      </div>
+    </div>
+  </div>
+</div>

